@@ -39,59 +39,59 @@ Back End: Django
 
 
 ## Home Page
-![](../master/Screenshots/image15.png?raw=true)
+![](../main/Screenshots/image15.png?raw=true)
 
 ## Hospital (Signup and Login)
-![](../master/Screenshots/image26.png?raw=true)
+![](../main/Screenshots/image26.png?raw=true)
 
 ## Hospital Page (Massaccheutes) :
-![](../master/Screenshots/image25.png?raw=true)
+![](../main/Screenshots/image25.png?raw=true)
 
 ## Doctor
-![](../master/Screenshots/image20.png?raw=true)
+![](../main/Screenshots/image20.png?raw=true)
 
 ## Doctor (Dorie):
-![](../master/Screenshots/image16.png?raw=true)
+![](../main/Screenshots/image16.png?raw=true)
 
 ## Patient
-![](../master/Screenshots/image12.png?raw=true)
+![](../main/Screenshots/image12.png?raw=true)
 
 ## Patient Page (Ernesto):
-![](../master/Screenshots/image13.png?raw=true)
+![](../main/Screenshots/image13.png?raw=true)
 
 ## Patient Record (New) :
-![](../master/Screenshots/image4.png?raw=true)
+![](../main/Screenshots/image4.png?raw=true)
 
 ## Patient Appointment (New):
-![](../master/Screenshots/image29.png?raw=true)
+![](../main/Screenshots/image29.png?raw=true)
 
 ## See Doctors:
-![](../master/Screenshots/image21.png?raw=true)
+![](../main/Screenshots/image21.png?raw=true)
 
 ## About Us:
-![](../master/Screenshots/image31.png?raw=true)
+![](../main/Screenshots/image31.png?raw=true)
 
 ## Contact Us:
-![](../master/Screenshots/image22.png?raw=true)
+![](../main/Screenshots/image22.png?raw=true)
 
 ## Admin:
-![](../master/Screenshots/image9.png?raw=true)
+![](../main/Screenshots/image9.png?raw=true)
 
 ## Urls.py:
-![](../master/Screenshots/image23.png?raw=true)
+![](../main/Screenshots/image23.png?raw=true)
 
 ## Views.py:
-![](../master/Screenshots/image14.png?raw=true)
+![](../main/Screenshots/image14.png?raw=true)
 
 # Models.py:
 ## Hospital Model
-![](../master/Screenshots/image27.png?raw=true)
+![](../main/Screenshots/image27.png?raw=true)
 
 ## Doctor Model
-![](../master/Screenshots/image30.png?raw=true)
+![](../main/Screenshots/image30.png?raw=true)
 
 ## Patient Model:
-![](../master/Screenshots/image19.png?raw=true)
+![](../main/Screenshots/image19.png?raw=true)
 
 ## Future Scope:
 We plan on taking it a step forward by making it an interactive platform which fulfills the needs of doctors as well as patients to the fullest.
