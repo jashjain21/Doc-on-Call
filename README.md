@@ -10,10 +10,10 @@ Medical/health is the location of the website to be launched
 Aim : We aim at catering the needs of patients and providing them with the best of healthcare facilities.We have a doctor recommendation system wherein a patient can track his past appointments and a new patient would be recommended the best doctor available based on their speciality by taking in data about which type of patients a doctor treats the best and also your illness is taken in considerations
 
 ## ER Diagram
-![](../master/Screenshots/image2.png?raw=true)
+![](../main/Screenshots/image2.png?raw=true)
 
 ## Schema Diagram
-![](../master/Screenshots/image24.png?raw=true)
+![](../main/Screenshots/image24.png?raw=true)
 
 Features
 1. Hospital authentication.(register / login)
