@@ -1,0 +1,125 @@
+    {% extends 'patient/basic.html' %}
+    {% block title%}
+    LoginPage
+    {% endblock %}
+    {% block body%}
+    {% if messages %}
+    <div id="message"  class="alert-dismissible fade show alert alert-success" role="alert">
+      <ul  id="inner-message" class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+    <div class="container">
+  	<div class="jumbotron">
+    		<h1 class="display-4">Hello, {{patient.F_Name}}</h1>
+    		<!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    		<hr class="my-4">
+    		<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    		<p class="lead">
+      		<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    		</p> -->
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Attribute</th>
+              <th scope="col">Value Of Attribute</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Patient's Id</th>
+              <td>{{patient.Id}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Patient's Full Name</th>
+              <td>{{patient.F_Name}} {{patient.M_Name}} {{patient.L_Name}}</td>
+            </tr>
+            <tr>
+              <th scope="row">State</th>
+              <td>{{patient.State}}</td>
+            </tr>
+            <tr>
+              <th scope="row">City</th>
+              <td>{{patient.City}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Street</th>
+              <td>{{patient.Street}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Pin Code</th>
+              <td>{{patient.Pincode}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Phone_No</th>
+              <td>{{patient.Phone_No}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Age</th>
+              <td>{{age}}  yrs</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br><br><br>
+  	</div>
+    <h3>Past Records</h3>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Record Name</th>
+          <th scope="col">Doctor Name</th>
+          <th scope="col">Diagnostics</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for rec in records %}
+        <tr>
+          <td>{{rec.Name}}</td>
+          <td>Dr {{rec.Doctor.F_Name}} {{rec.Doctor.L_Name}}</td>
+          <td>{{rec.P_Diagnostics}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br><br>
+    <a href="/patient/record"><button type="button" class="btn btn-primary btn-lg pull-right">Create New Record</button></a>
+<br><br>
+    <h3>Your Appointments</h3>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Appointment Id</th>
+          <th scope="col">Record Name</th>
+          <th scope="col">Date Of Appointment</th>
+          <th scope="col">Medication</th>
+          <th scope="col">Medicines</th>
+          <th scope="col">Fee Paid</th>
+          <th scope="col">Ratings(out of 5)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for app in appointments %}
+        <tr>
+          <td>{{app.Id}}</td>
+          <td>{{app.Patient_Record.Name}}</td>
+          <td>{{app.Date_Of_Appointment}}</td>
+          <td>{{app.Medication}} Days</td>
+          <td>{{app.Medicines}}</td>
+          <td>{{app.Fee_Paid}}</td>
+          <td>{{app.Ratings}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br><br>
+    <a href="/patient/appointment"><button type="button" class="btn btn-primary btn-lg pull-right">Create New Appointment</button></a>
+
+<br><br><br>
+<a href="/patient/logout"><button type="button" class="btn btn-dark pull-right">Logout</button></a>{% csrf_token %}
+<br><br>
+  	</div>
+{% endblock %}

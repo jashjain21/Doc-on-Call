@@ -1,0 +1,87 @@
+    {% extends 'hospital/basic.html' %}
+    {% block title%}
+    LoginPage
+    {% endblock %}
+    {% block body%}
+    {% if messages %}
+    <div id="message"  class="alert-dismissible fade show alert alert-success" role="alert">
+      <ul  id="inner-message" class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+<br><br><br>
+<div class="container">
+  <h3>Personal Information</h3>
+  <p></p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Attribute</th>
+      <th scope="col">Value Of Attribute</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Hospital Id</th>
+      <td>{{hosp.Id}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Hospital Name</th>
+      <td>{{hosp.Name}} Hospital</td>
+    </tr>
+    <tr>
+      <th scope="row">State</th>
+      <td>{{hosp.State}}</td>
+    </tr>
+    <tr>
+      <th scope="row">City</th>
+      <td>{{hosp.City}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Street</th>
+      <td>{{hosp.Street}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Pin Code</th>
+      <td>{{hosp.Pincode}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Phone Number</th>
+      <td>{{hosp.Phone_No}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br><br><br>
+<h3>Associated Doctors if Any</h3>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id Of Doctor</th>
+      <th scope="col">Name Of Doctor</th>
+      <th scope="col">Address</th>
+      <th scope="col">Qualification</th>
+      <th scope="col">Specialization</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for doc in docs %}
+    <tr>
+      <td>{{doc.Id}}</td>
+      <td>Doctor {{doc.F_Name}} {{doc.L_Name}}</td>
+      <td>{{doc.Street}},{{doc.City}},{{doc.State}},{{doc.Pincode}}</td>
+      <td>{{doc.Qualification}}</td>
+      <td>{{doc.Specialization}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<br><br><br>
+<br><br><br>
+<a href="/hospital/logout"><button type="button" class="btn btn-dark pull-right">Logout</button></a>{% csrf_token %}
+<br><br>
+</div>
+{% endblock %}

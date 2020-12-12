@@ -1,0 +1,140 @@
+{% extends 'hospital/basic.html' %}
+{% block title%}
+Hospital Signup
+{% endblock %}
+{% block body%}
+{% if messages %}
+<div id="message" class="alert-dismissible fade show alert alert-success" role="alert">
+  <ul id="inner-message" class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+    {% endfor %}
+    {% endif %}
+  </ul>
+</div>
+<script type="text/javascript">
+  var citiesByState = {
+    Odisha: ["Bhubaneswar", "Puri", "Cuttack", "Jash"],
+    Maharashtra: ["Mumbai", "Pune", "Nagpur", "Thane", "Nashik"],
+    Gujarat: ["Ahmedabad", "Surat", "Rajkot", "Vadodra", "Gandhinagar"],
+    Karnataka: ["Bengaluru", "Mangalore", "Hubli", "Belgaum", "Tumakuru"],
+    Rajasthan: ["Jaipur", "Udaipur", "Kota", "Bikaner", "Ajmer"],
+    Punjab: ["Amritsar", "Chandigarh", "Firozpur", "Jalandar", "Ludhiana"],
+    West_Bengal: ["Kolkata", "Siliguri", "Asansol", "Durgapur", "Kharagpur"],
+    Tamil_Nadu: ["Chennai", "Vellore", "Madurai", "Coimbatore", "Tiruppur"],
+    Andhra_Pradesh: ["Amravati", "Tirupati", "Vijayawada", "Guntur", "Nellore"],
+    Assam: ["Guwahati", "Nagaon", "Tinsukia", "Jorhat", "Silchar"],
+    Uttarakhand: ["Dehradun", "Haridwar", "Nainital", "Rishikesh", "Mussoorie"]
+  }
+
+  function makeSubmenu(value) {
+    if (value.length == 0) document.getElementById("citySelect").innerHTML = "<option></option>";
+    else {
+      var citiesOptions = "";
+      for (cityId in citiesByState[value]) {
+        citiesOptions += "<option>" + citiesByState[value][cityId] + "</option>";
+      }
+      document.getElementById("citySelect").innerHTML = citiesOptions;
+    }
+  }
+
+  function displaySelected() {
+    var country = document.getElementById("countrySelect").value;
+    var city = document.getElementById("citySelect").value;
+    alert(country + "\n" + city);
+  }
+
+  function resetSelection() {
+    document.getElementById("countrySelect").selectedIndex = 0;
+    document.getElementById("citySelect").selectedIndex = 0;
+  }
+</script>
+<div class="container">
+  <h1 class="ml-3">Hospital Signup Page</h1>
+  <form method="post">{% csrf_token %}
+    <div class="form-group">
+      <label class="col-md-4 control-label">Name</label>
+      <div class="col-md-8 inputGroupContainer">
+        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="f_Name" name="f_name" placeholder="Name" class="form-control" required="true" value="" type="text"></div>
+      </div>
+    </div>
+    <!-- <div class="form-group">
+                            <label class="col-md-4 control-label">State/Province/Region</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="state" placeholder="State/Province/Region" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">City</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="city" placeholder="City" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div> -->
+    <div class="form-group">
+      <label for="inlineFormCustomSelectPref" class="col-md-4 control-label">State/Province/Region</label>
+      <div class="col-md-8 inputGroupContainer">
+        <select id="countrySelect inlineFormCustomSelectPref" class="custom-select my-1 mr-sm-2" name="state" size="1" onchange="makeSubmenu(this.value)">
+          <option value="" disabled selected>Choose State</option>
+          <option>Maharashtra</option>
+          <option>Gujarat</option>
+          <option>Karnataka</option>
+          <option>Rajasthan</option>
+          <option>Punjab</option>
+          <option>West_Bengal</option>
+          <option>Tamil_Nadu</option>
+          <option>Andhra_Pradesh</option>
+          <option>Assam</option>
+          <option>Uttarakhand</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="inlineFormCustomSelectPref">City</label>
+      <div class="col-md-8 inputGroupContainer">
+        <select id="citySelect" for="inlineFormCustomSelectPref" class="custom-select my-1 mr-sm-2" size="1" name="city">
+          <option value="" disabled selected>Choose City</option>
+          <option></option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label">Postal Code/ZIP</label>
+      <div class="col-md-8 inputGroupContainer">
+        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="postcode" name="pincode" placeholder="Postal Code/ZIP" class="form-control" required="true" value="" type="text"></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label">Street</label>
+      <div class="col-md-8 inputGroupContainer">
+        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="street" placeholder="Street" class="form-control" required="true" value="" type="text"></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-8 inputGroupContainer">
+      <label class="col-md-4 control-label">Email</label>
+        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span><input id="email" name="email" placeholder="Email" class="form-control" required="true" value="" type="text"></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-8 inputGroupContainer">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Password" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-8 inputGroupContainer">
+        <label for="exampleInputPassword1">Re_Enter Password</label>
+        <input type="password" class="form-control" name="password1" placeholder="Password" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-8 inputGroupContainer">
+      <label class="col-md-4 control-label">Phone Number</label>
+        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" name="phonenumber" placeholder="Phone Number" class="form-control" required="true" value="" type="text"></div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary ml-3">Submit</button>
+  </form>
+  <br><br>
+</div>
+{% endblock %}

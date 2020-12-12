@@ -1,0 +1,51 @@
+{% extends 'patient/basic.html' %}
+{% block title%}
+Patient Signup
+{% endblock %}
+{% block body%}
+<div class="container">
+  <form method="post">{% csrf_token %}
+    <label class="col-md-4 control-label" for="inlineFormCustomSelectPref">Choose Record Associated</label>
+    <div class="col-md-8 inputGroupContainer">
+      <select id="abc" for="inlineFormCustomSelectPref" class="custom-select my-1 mr-sm-2" size="1" name="record">
+        <option value="" disabled selected>-----</option>
+        {% for rec in records %}
+        <option>{{ rec.Name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+      <label for="example-date-input" class="col-2 col-form-label">Date Of Appointment</label>
+      <div class="col-md-8 inputGroupContainer">
+        <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="date">
+      </div>
+
+      <label class="col-md-4 control-label">Medication</label>
+      <div class="col-md-8 inputGroupContainer">
+        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="f_Name" name="medication" placeholder="days" class="form-control" required="true" value="" type="number"></div>
+      </div>
+
+      <label class="col-md-4 control-label">Medicines</label>
+      <div class="col-md-8 inputGroupContainer">
+        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="f_Name" name="medicines" placeholder="name of medicines" class="form-control" required="true" value="" type="text"></div>
+      </div>
+
+      <label class="col-md-4 control-label">Fee Paid</label>
+      <div class="col-md-8 inputGroupContainer">
+        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="f_Name" name="fee" placeholder="fee_paid" class="form-control" required="true" value="" type="number"></div>
+      </div>
+
+      <div class="col-md-8 inputGroupContainer">
+      <label for="exampleSelect1">Rating(out of 5)</label>
+      <select class="form-control" id="exampleSelect1" name="rating">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <br><br>
+</div>
+{% endblock %}

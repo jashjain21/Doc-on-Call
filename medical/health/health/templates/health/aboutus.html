@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- {% load static %} -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>About Us</title>
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+  </style>
+  <title></title>
+</head>
+
+<body>
+  {% include "health/navbar.html" %}
+  <br><br>
+  <center>
+    <br>
+    <h1 class='alert alert-success' style="margin-bottom:0px;">About Us !</h3>
+  </center>
+  <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
+    <h1 class="display-4">Doc For All</h1>
+    <p class="lead container">We aim at catering the needs of patients and
+    providing them with the best of healthcare facilities.We
+    have a doctor recommendation system wherein a patient
+    can track his past appointments and a new patient would be
+    recommended the best doctor available based on their
+    speciality by taking in data about which type of patients a
+    doctor treats the best and also your illness is taken in
+    considerations</p>
+    <hr class="my-4">
+    <center>
+    <p>Explore our Website.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
+    </p>
+  </center>
+  </div>
+
+  {% include "health/footer.html" %}
+</body>

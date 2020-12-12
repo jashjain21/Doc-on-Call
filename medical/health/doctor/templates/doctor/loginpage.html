@@ -1,0 +1,114 @@
+    {% extends 'doctor/basic.html' %}
+    {% block title%}
+    LoginPage
+    {% endblock %}
+    {% block body%}
+    {% if messages %}
+    <div id="message" class="alert-dismissible fade show alert alert-success" role="alert">
+      <ul id="inner-message" class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    <div class="container">
+      <h3>Personal Information</h3>
+      <p></p>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Attribute</th>
+            <th scope="col">Value Of Attribute</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Doctor's Id</th>
+            <td>{{doc.Id}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Doctor's Full Name</th>
+            <td>Dr. {{doc.F_Name}} {{doc.L_Name}}</td>
+          </tr>
+          <tr>
+            <th scope="row">State</th>
+            <td>{{doc.State}}</td>
+          </tr>
+          <tr>
+            <th scope="row">City</th>
+            <td>{{doc.City}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Street</th>
+            <td>{{doc.Street}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Pin Code</th>
+            <td>{{doc.Pincode}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Specialization</th>
+            <td>{{doc.Specialization}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Qualification</th>
+            <td>{{doc.Qualification}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br><br>
+      <h3>Your Records With Patients</h3>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Record Name</th>
+            <th scope="col">Patient Name</th>
+            <th scope="col">Diagnostics</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for rec in records %}
+          <tr>
+            <td>{{rec.Name}}</td>
+            <td>{{rec.Patient.F_Name}} {{rec.Patient.M_Name}} {{rec.Patient.L_Name}}</td>
+            <td>{{rec.P_Diagnostics}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <br><br>
+
+      <h3>Your Appointments With Patients</h3>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Appointment Id</th>
+            <th scope="col">Record Name</th>
+            <th scope="col">Date Of Appointment</th>
+            <th scope="col">Medication</th>
+            <th scope="col">Medicines</th>
+            <th scope="col">Fee Paid</th>
+            <th scope="col">Ratings(out of 5)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for app in appointments %}
+          <tr>
+            <td>{{app.Id}}</td>
+            <td>{{app.Patient_Record.Name}}</td>
+            <td>{{app.Date_Of_Appointment}}</td>
+            <td>{{app.Medication}} Days</td>
+            <td>{{app.Medicines}}</td>
+            <td>{{app.Fee_Paid}}</td>
+            <td>{{app.Ratings}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <br><br>
+      <br><br><br>
+      <a href="/doctor/logout"><button type="button" class="btn btn-dark pull-right">Logout</button></a>{% csrf_token %}
+      <br><br>
+    </div>
+    {% endblock %}

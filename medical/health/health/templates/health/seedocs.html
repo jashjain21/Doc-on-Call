@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Index page</title>
+
+</head>
+
+<body>
+  {% include "health/navbar.html" %}
+	<br>
+	<br>
+  <div class="container">
+    <br><br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Doctor Name</th>
+        <th scope="col">Specialization</th>
+        <th scope="col">Address</th>
+        <th scope="col">Rating(Out of 5)</th>
+        <th scope="col">Number of Ratings Given</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cat,rating,len in category %}
+      {% if rating %}
+      <tr>
+        <td>Dr {{cat.F_Name}} {{cat.L_Name}}</td>
+        <td>{{cat.Specialization}}</td>
+        <td>{{cat.City}}</td>
+        <td>{{rating}}</td>
+        <td>{{len}} ratings</td>
+      </tr>
+      {% else %}
+      <tr>
+        <td>Dr {{cat.F_Name}} {{cat.L_Name}}</td>
+        <td>{{cat.Specialization}}</td>
+        <td>{{cat.City}}</td>
+        <td>Not Available</td>
+        <td>{{len}} ratings</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+  <br><br>
+  </div>
+  {% include "health/footer.html" %}
+</body>
+
+
+</html>

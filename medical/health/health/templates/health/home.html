@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Index page</title>
+  <style media="screen">
+  	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-image: url(https://assets.isu.pub/document-structure/200120061835-2d90e92ae0bdd18ef677744fea49f745/v1/0e45830e2e75119cce3f4249cdb8d697.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .jumbotron h5,
+    h3 {
+      text-align: center;
+    }
+
+
+    .alert {
+      margin: 0px;
+    }
+
+
+
+    .glow {
+      font-size: 50px;
+      color: white;
+      text-align: center;
+      -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .title {
+      color: grey;
+      font-size: 18px;
+    }
+
+    button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    button:hover,
+    a:hover {
+      opacity: 0.7;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      padding: 10px;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    a {
+      color: white;
+    }
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
+      }
+
+      to {
+        text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  {% include "health/navbar.html" %}
+
+	<br>
+	<br>
+
+	<!--<div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px; background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcREQViO8DNLVAiFa90mLIOWOZmj-Zpxa7WT8w&usqp=CAU); background-size: cover;"> -->
+    <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px; background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(https://chemitexpharmacy.files.wordpress.com/2017/08/cropped-medical-cross-background-111.jpg?w=1200&h=); background-size: cover;">
+  		<br>
+  			<h3 class="display-1"><strong><span style="color: black;">Doc For All</span></strong></h3>
+  		<br><br><br><br><br>
+
+  		<br><br>
+	</div>
+
+	<br><br><br><br>
+  		<div class="grid-container" style="margin-bottom: 0px;">
+    		<div class="grid-item">
+      		<div class="card">
+        		<!-- <img src="https://image.shutterstock.com/image-vector/doctor-vector-illustration-260nw-512904655.jpg" alt="John" style="width:100%"> -->
+            <img src="https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?size=338&ext=jpg" alt="John" style="width:100%">
+            <p class="title mt-3">DOCTOR</p>
+        		<a href="doctor"><p><button class="btn btn-primary" style="width: 33%;">View</button></p></a>
+      		</div>
+    		</div>
+
+    		<div class="grid-item">
+      			<div class="card">
+        			<!--<img src="https://cdn5.vectorstock.com/i/1000x1000/78/14/tiny-cute-cartoon-patient-man-character-broken-vector-26027814.jpg" alt="John" style="width:100%"> -->
+              <img src="https://image.freepik.com/free-vector/vector-illustration-tiny-cute-cartoon-patient-man-character-broken-right-arm-gypsum-bandage-plastered-arm_52005-73.jpg" alt="John" style="width:100%">
+        			<p class="title mt-3">PATIENT</p>
+        			<a href="patient"><p><button class="btn btn-primary" style="width: 33%;">View</button></p></a>
+      			</div>
+    		</div>
+        <div class="grid-item">
+      		<div class="card">
+        	<!--<img src="https://previews.123rf.com/images/skathi/skathi1806/skathi180600106/104009977-vector-cartoon-style-illustration-of-medical-hospital-building-medical-stuff-and-ambulance-car-urban.jpg" alt="John" style="width:100%"> -->
+          <img src="https://img.freepik.com/free-vector/medical-staff-team-concept-front-hospital_43633-7247.jpg?size=338&ext=jpg" alt="John" style="width:100%">
+        		<p class="title mt-3">HOSPITAL</p>
+        		<a href="hospital"><p><button class="btn btn-primary" style="width: 33%;">View</button></p></a>
+          </div>
+    		</div>
+        <!-- <div class="grid-item">
+      		<div class="card">
+        	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRGmOYXmoZrp0a9LOyRxxqhlfHJcNtpLt5wZw&usqp=CAU" alt="John" style="width:100%">
+        		<p class="title">ADMIN</p>
+        		<a href="http://127.0.0.1:8000/admin/"><button>View</button></a>
+          </div>
+    		</div> -->
+
+      </div>
+	<br><br><br>
+
+
+  {% include "health/footer.html" %}
+</body>
+
+
+</html>

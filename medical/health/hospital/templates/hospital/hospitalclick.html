@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Index page</title>
+
+</head>
+
+<body>
+  {% include "hospital/navbar.html" %}
+  <br>
+  <br>
+
+  <div class="jumbotron" style="margin-bottom:0px;">
+    <h1 class="display-4" style="text-align:center;">Hello, Hospital</h1>
+    <p class="lead" style="text-align:center;">Welcome to Hospital Management System.</p>
+    <hr class="my-4">
+    <p style="text-align:center;">You can access various features after Login/SignUp.</p>
+    <p class="lead" style="text-align:center;">
+      <a class="btn btn-primary btn-lg" href="/hospital/signup" role="button">Register Your Account</a>
+      <a class="btn btn-primary btn-lg" href="/hospital/login" role="button">Login</a>
+    </p>
+  </div>
+  {% include "hospital/footer.html" %}
+</body>
+
+
+</html>
